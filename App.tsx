@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-
-import { Text } from './src/components/Text/Text';
+import { Dashboard } from './src/screens/Dashboard/Dashboard';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,20 +27,9 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar />
-      <Text regular preset='heading'>
-        oi
-      </Text>
+    <View>
+      <StatusBar hidden />
+      <Dashboard />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
