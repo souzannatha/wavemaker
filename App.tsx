@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+
+import { Text } from './src/components/Text/Text';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -11,6 +13,7 @@ export default function App() {
     'Jakarta-Sans-Bold': require('./assets/fonts/PlusJakartaSans-Bold.ttf'),
     'Jakarta-Sans-Regular': require('./assets/fonts/PlusJakartaSans-Regular.ttf'),
   });
+
   useEffect(() => {
     async function hideSplash() {
       if (fontsLoaded) {
@@ -26,10 +29,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: 'Jakarta-Sans-Regular' }}>
-        Open up App.tsx to start working on your app!
+      <StatusBar />
+      <Text regular preset='heading'>
+        oi
       </Text>
-      <StatusBar style='dark' />
     </View>
   );
 }
