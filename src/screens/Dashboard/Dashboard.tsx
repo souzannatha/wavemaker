@@ -5,6 +5,7 @@ import { Text } from '../../components/Text/Text';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { CourseCard } from '../../components/CourseCard/CourseCard';
 import { CourseCardWithText } from '../../components/CourseCardWithText/CourseCardWithText';
+import { Footer } from '../../components/footer/Footer';
 
 export function Dashboard() {
   const courses = [1, 2, 3, 4];
@@ -78,12 +79,14 @@ export function Dashboard() {
             Categoria Cursos Disponíveis com Título
           </Text>
           <ScrollView horizontal style={styles.courseList}>
-            {courses.map((item, index) => (
+            {courses.slice(0, 1).map((item, index) => (
               <CourseCardWithText key={index} shop={false} />
             ))}
           </ScrollView>
+          <View style={{ marginTop: 16 }} />
         </View>
       </View>
+      <Footer />
     </ScrollView>
   );
 }
