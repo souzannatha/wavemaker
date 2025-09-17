@@ -45,4 +45,18 @@ export const styles = StyleSheet.create({
     color: colors.white,
     width: 256,
   },
+  coursesContainer: {
+    backgroundColor: colors.grey500,
+  },
+  coursesList: {
+    marginLeft: 16,
+  },
+  courseTitle: {
+    color: colors.white,
+    marginTop: 16,
+    marginBottom: 8,
+  },
+  courseList: {
+    flexDirection: 'row',
+  },
 });

@@ -3,8 +3,10 @@ import { styles } from './styles';
 import { Menu } from '../../components/Menu/Menu';
 import { Text } from '../../components/Text/Text';
 import { AntDesign, Entypo } from '@expo/vector-icons';
+import { CourseCard } from '../../components/CourseCard/CourseCard';
 
 export function Dashboard() {
+  const courses = [1, 2, 3, 4];
   return (
     <ScrollView>
       <Menu />
@@ -36,6 +38,34 @@ export function Dashboard() {
           </Text>
         </View>
       </ImageBackground>
+      <View style={styles.coursesContainer}>
+        <View style={styles.coursesList}>
+          <Text bold preset='paragraphBig' style={styles.courseTitle}>
+            Continuar Assistindo
+          </Text>
+          <ScrollView horizontal style={styles.courseList}>
+            {courses.map((item, index) => (
+              <CourseCard key={index} shop={false} />
+            ))}
+          </ScrollView>
+          <Text bold preset='paragraphBig' style={styles.courseTitle}>
+            Categoria Cursos sem Título
+          </Text>
+          <ScrollView horizontal style={styles.courseList}>
+            {courses.map((item, index) => (
+              <CourseCard key={index} showBar={false} shop={false} />
+            ))}
+          </ScrollView>
+          <Text bold preset='paragraphBig' style={styles.courseTitle}>
+            Categoria Cursos Pagos
+          </Text>
+          <ScrollView horizontal style={styles.courseList}>
+            {courses.map((item, index) => (
+              <CourseCard key={index} showBar={false} />
+            ))}
+          </ScrollView>
+        </View>
+      </View>
     </ScrollView>
   );
 }

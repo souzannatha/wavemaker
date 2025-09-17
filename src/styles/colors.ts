@@ -5,4 +5,5 @@ export const colors = {
   grey100: '#1E1E1E',
   grey500: '#171717',
   grey1000: '#000000',
+  yellow: '#F4BF00',
 };
